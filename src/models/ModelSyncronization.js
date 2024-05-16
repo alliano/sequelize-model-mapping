@@ -55,16 +55,16 @@ mata_kuliah.belongsToMany(mahasiswa, {
     targetKey: "id",
     timestamps: false
 });
-async function sync() {
+async function syncronize() {
     try{
         await connection.sync({
             alter: true
         });
-        console.log("Database successfuly sync...");
+        // console.log("Database successfuly sync...");
     }catch(err) {
         console.log("Database failed sync...");
         console.log(err);
     }
 }
-sync();
-export { Users, Addresses, Post, Comments, PostImage, Skill, UserSkill, connection, mahasiswa, m_addresses }
+
+export { Users, Addresses, Post, Comments, PostImage, Skill, UserSkill, connection, mahasiswa, m_addresses, syncronize }
